@@ -33,28 +33,34 @@ VALUES
 
 INSERT INTO `opheliadb`.`customers`
 (`address`,
+`birthday_date`,
 `name`,
 `phone`)
 VALUES
-("CL 1 #2-3",
-"Pedro Perez",
-"3157772233");
+('CL 1 #2-3',
+'1975-12-06',
+'Pedro Perez',
+'3157772233');
 INSERT INTO `opheliadb`.`customers`
 (`address`,
+`birthday_date`,
 `name`,
 `phone`)
 VALUES
-("CL 1 #2-3",
-"Martin Martinez",
-"3157772244");
+('CL 1 #2-3',
+'1995-12-06',
+'Martin Martinez',
+'3157772244');
 INSERT INTO `opheliadb`.`customers`
 (`address`,
+`birthday_date`,
 `name`,
 `phone`)
 VALUES
-("CL 1 #2-3",
-"Rodrigo Rodriguez",
-"3157772255");
+('CL 1 #2-3',
+'1985-12-06',
+'Rodrigo Rodriguez',
+'3157772255');
 
 
 INSERT INTO `opheliadb`.`sales`
@@ -63,10 +69,10 @@ INSERT INTO `opheliadb`.`sales`
 `tax`,
 `gross_value`,
 `full_value`,
-`client_id`)
+`customer_id`)
 VALUES
 (10,
-'2000-02/01',
+'2000-02-01',
 10,
 100,
 100,

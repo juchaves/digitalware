@@ -132,6 +132,6 @@ public class Sale {
     private Float fullValue;
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    @JoinColumn(name="client_id")
+    @JoinColumn(name="customer_id")
     private Customer customer;
 }

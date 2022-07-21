@@ -1,6 +1,7 @@
 CREATE TABLE `customers` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `address` varchar(255) DEFAULT NULL,
+  `birthday_date` datetime(6) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   `phone` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -12,6 +13,7 @@ CREATE TABLE `products` (
   `supplier` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 CREATE TABLE `sales` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `date` datetime(6) DEFAULT NULL,
@@ -19,11 +21,11 @@ CREATE TABLE `sales` (
   `full_value` float DEFAULT NULL,
   `gross_value` float DEFAULT NULL,
   `tax` float DEFAULT NULL,
-  `client_id` bigint DEFAULT NULL,
+  `customer_id` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `FKpwhs3vhuigcu07trks3w3h6wt` (`client_id`),
-  CONSTRAINT `FKpwhs3vhuigcu07trks3w3h6wt` FOREIGN KEY (`client_id`) REFERENCES `customers` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `FKd94vrikapjd2ews1k4lb71sfg` (`customer_id`),
+  CONSTRAINT `FKd94vrikapjd2ews1k4lb71sfg` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 CREATE TABLE `items` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `admission_date` datetime(6) DEFAULT NULL,
