@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <H3>Agregar Venta</H3>
+    </div>
+    <div class="card-body">
+      <form action="">
+        <div class="form-group">
+          <label for="date">Fecha:</label>
+          <input type="text" id="date" name="date" [(ngModel)]="saleModel.date" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="grossValue">Valor neto:</label>
+          <input type="text" id="grossValue" name="grossValue" [(ngModel)]="saleModel.grossValue" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="discount">Descuento:</label>
+          <input type="text" id="discount" name="discount" [(ngModel)]="saleModel.discount" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="tax">Impuesto:</label>
+          <input type="text" id="tax" name="tax" [(ngModel)]="saleModel.tax" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="fullValue">Valor total:</label>
+          <input type="text" id="fullValue" name="fullValue" [(ngModel)]="saleModel.fullValue" class="form-control">
+        </div>
+        <div class="form-group row">
+          <label for="customer" class="col-form-label">Cliente:</label>
+          <select [compareWith]="customerCompare"  [(ngModel)]="saleModel.customer" class="form-control" name="customer">
+            <option [ngValue]="undefined">--- Seleccionar un cliente ---</option>
+            <option *ngFor="let customer of customers" [ngValue]="customer">{{customer.name}}</option>
+          </select>
+        </div>
+        <button  class="btn btn-danger" (click)="save()" *ngIf="!saleModel.id">Guardar</button>
+        <button  class="btn btn-danger" (click)="update()" *ngIf="saleModel.id">Guardar</button>
+
+      </form>
+    </div>
+
+  </div>
+</div>

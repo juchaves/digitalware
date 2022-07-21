@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <H3>Listado de items</H3>
+      <button class="btn btn-info" (click)="add()">Agregar</button>
+    </div>
+    <div class="card-body">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Fecha Ingreso</th>
+            <th scope="col">Costo</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cod Item</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Venta</th>
+            <th scope="col">ACCIONES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items">
+            <th scope="row">{{item.id}}</th>
+            <td>{{item.admissionDate}}</td>
+            <td>{{item.cost}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.itemCode}}</td>
+            <td>{{item.product.name}}</td>
+            <td>{{item.sale==null? "" : (item.sale.customer.name + ' (' + item.sale.date + ')' ) }}</td>
+            <td>
+              <button class="btn btn-warning" [routerLink]="['/item_update', item.id]">Editar</button>
+              <button class="btn btn-danger" (click)="delete(item.id)" >Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
